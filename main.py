@@ -22,15 +22,19 @@ def computer_guess(y):
     guessTimes = 0
 
     while i != 'r':
-        computer_guess = random.randint(low, high)
-        i = input(f"\nDear user, my lucky number is {computer_guess}, type: \nf). If It is not\nc). If I am close\nr). If I guessed right.\n-> ").lower()
-        if i == 'f':
+        if low != high:
+            currentComputerGuess = random.randint(low, high)
+        else:
+            currentComputerGuess = low
+
+        i = input(f"\nDear user, my lucky number is {currentComputerGuess}, type: \nh). If it is higher\nl). If it is less\nr). If I guessed right.\n-> ").lower()
+        if i == 'h':
             print("Ok I will try again.")
-            high = computer_guess - 1
+            low = currentComputerGuess + 1
             guessTimes += 1
-        elif i == 'c':
+        elif i == 'l':
             print("Ok, that is good to know. I will try again.")
-            low = computer_guess
+            high = currentComputerGuess - 1
             guessTimes += 1
 
     print(f"Dude, took me {guessTimes} tries. Anyways, it was fun!")
@@ -39,4 +43,4 @@ def computer_guess(y):
 
 if __name__ == '__main__':
     #user_guess(10)
-    computer_guess(100)
+    computer_guess(1000)
