@@ -46,7 +46,7 @@ if __name__ == '__main__':
     """ user_guess(10) """
     #####################################
 
-    print("\nDear user, please think of a number and do not tell anyone. I am going to guess it.")
+    print("\nDear user, please think of a number from 1 to 1000 and do not tell anyone. I am going to guess it.")
     ready = ""
     while ready != "yes":
         ready = input("Type and enter YES if you are ready -> ").lower()
