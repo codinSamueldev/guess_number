@@ -14,8 +14,9 @@ def user_guess(x):
 
     print(f"\nCongrats! your lucky {userInput} number it is correct. ")
 
+##################################################
+
 def computer_guess(y):
-    print("\nDear user, please think of a number and do not tell anyone. I am going to guess it.")
     low = 1
     high = y
     i = ""
@@ -42,5 +43,12 @@ def computer_guess(y):
 
 
 if __name__ == '__main__':
-    #user_guess(10)
+    """ user_guess(10) """
+    #####################################
+
+    print("\nDear user, please think of a number and do not tell anyone. I am going to guess it.")
+    ready = ""
+    while ready != "yes":
+        ready = input("Type and enter YES if you are ready -> ").lower()
+
     computer_guess(1000)
